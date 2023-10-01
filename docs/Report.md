@@ -9,7 +9,7 @@
 - 2 теста завершены со статусом "broken" (6.25%)
 - 8 тестов завершены со статусом "failed" (25%)
 
-![Результаты тестирования](C:\Users\isbocha\Desktop\Java\aqa-qamid-diplom\docs\img_1.png)
+![Результаты тестирования](https://github.com/Isbocha/Coursework/blob/main/docs/img_1.png)
 
 
 ## Общие рекомендации
