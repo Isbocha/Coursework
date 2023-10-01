@@ -75,6 +75,13 @@ public class DataHelper {
         return name;
     }
 
+    public static String getInvalidNameWithNumbers() {
+        return ("4565432 Е6521jdfhud");
+    }
+    public static String getInvalidNameWithЫpecialСharacterss() {
+        return ("M%%:* 6546544?*?;@#%&");
+    }
+
     public static String getRandomValidCVC() {
         return (faker.numerify("###"));
     }

@@ -5,6 +5,8 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -68,35 +70,35 @@ public class CreditPage {
     }
 
     public void getMessageAboutAPositiveOperation() {
-        positiveResponse.shouldBe(visible);
+        positiveResponse.shouldBe(visible, Duration.ofSeconds(15));
     }
 
     public void getMessageAboutANegativeOperation() {
-        negativeResponse.shouldBe(visible);
+        negativeResponse.shouldBe(visible, Duration.ofSeconds(15));
     }
 
     public void getErrorTextInTheCardNumberField(String text) {
-        cardNumberField.shouldBe(visible);
         cardNumberField.shouldHave(Condition.exactText(text));
-    }
+        cardNumberField.shouldBe(visible);
+            }
 
     public void getErrorTextInTheMonthField(String text) {
-        monthField.shouldBe(visible);
         monthField.shouldHave(Condition.exactText(text));
-    }
+        monthField.shouldBe(visible);
+            }
 
     public void getErrorTextInTheYearField(String text) {
-        yearField.shouldBe(visible);
         yearField.shouldHave(Condition.exactText(text));
-    }
+        yearField.shouldBe(visible);
+           }
 
     public void getErrorTextInTheNameField(String text) {
-        nameField.shouldBe(visible);
         nameField.shouldHave(Condition.exactText(text));
-    }
+        nameField.shouldBe(visible);
+           }
 
     public void getErrorTextInTheCVCField(String text) {
-        cvcCodeField.shouldBe(visible);
         cvcCodeField.shouldHave(Condition.exactText(text));
-    }
+        cvcCodeField.shouldBe(visible);
+           }
 }

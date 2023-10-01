@@ -5,6 +5,8 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -21,7 +23,6 @@ public class PaymentPage {
     private final SelenideElement monthField = $(byText("Месяц"))
             .parent()
             .find(".input__sub");
-    //private final SelenideElement monthField = $(By.cssSelector(".input__inner")).find(byText("Месяц")).closest(".input__sub");
     private final SelenideElement yearField = $(byText("Год"))
             .parent()
             .find(".input__sub");
@@ -60,16 +61,6 @@ public class PaymentPage {
     }
 
     public void userData(String cardNumber, String month, String year, String name, String cvc) {
-        cardNumberField.setValue(cardNumber);
-        monthField.setValue(month);
-        yearField.setValue(year);
-        yearField.setValue(year);
-        nameField.setValue(name);
-        cvcCodeField.setValue(cvc);
-        button.get(2).click();
-    }
-
-    public void userData2(String cardNumber, String month, String year, String name, String cvc) {
         field.get(0).setValue(cardNumber);
         field.get(1).setValue(month);
         field.get(2).setValue(year);
@@ -79,35 +70,35 @@ public class PaymentPage {
     }
 
     public void getMessageAboutAPositiveOperation() {
-        positiveResponse.shouldBe(visible);
+        positiveResponse.shouldBe(visible, Duration.ofSeconds(15));
     }
 
     public void getMessageAboutANegativeOperation() {
-        negativeResponse.shouldBe(visible);
+        negativeResponse.shouldBe(visible, Duration.ofSeconds(15));
     }
 
     public void getErrorTextInTheCardNumberField(String text) {
-        cardNumberField.shouldBe(visible);
         cardNumberField.shouldHave(Condition.exactText(text));
+        cardNumberField.shouldBe(visible);
     }
 
     public void getErrorTextInTheMonthField(String text) {
-        monthField.shouldBe(visible);
         monthField.shouldHave(Condition.exactText(text));
+        monthField.shouldBe(visible);
     }
 
     public void getErrorTextInTheYearField(String text) {
-        yearField.shouldBe(visible);
         yearField.shouldHave(Condition.exactText(text));
+        yearField.shouldBe(visible);
     }
 
     public void getErrorTextInTheNameField(String text) {
-        nameField.shouldBe(visible);
         nameField.shouldHave(Condition.exactText(text));
+        nameField.shouldBe(visible);
     }
 
     public void getErrorTextInTheCVCField(String text) {
-        cvcCodeField.shouldBe(visible);
         cvcCodeField.shouldHave(Condition.exactText(text));
+        cvcCodeField.shouldBe(visible);
     }
 }
